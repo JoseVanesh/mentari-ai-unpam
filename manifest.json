@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Mentari AI",
+  "version": "0.2.6",
+  "description": "Asisten AI untuk quiz, kuesioner, dan forum di Mentari UNPAM.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://mentari.unpam.ac.id/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Mentari AI",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "options_page": "src/options/options.html",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mentari.unpam.ac.id/*"],
+      "js": ["src/content/page-bridge.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://mentari.unpam.ac.id/*"],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/routes.js",
+        "src/shared/selectors.js",
+        "src/shared/storage.js",
+        "src/content/api.js",
+        "src/content/ui.js",
+        "src/content/features/quiz.js",
+        "src/content/features/kuesioner.js",
+        "src/content/features/forum.js",
+        "src/content/main.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

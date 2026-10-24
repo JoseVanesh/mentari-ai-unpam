@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mentari AI</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Mentari AI</h1>
+      <span class="version">v0.2.6</span>
+    </header>
+
+    <main>
+      <label class="field-label" for="apiKey">API Key Gemini</label>
+      <div class="row">
+        <input id="apiKey" type="password" autocomplete="off" spellcheck="false" placeholder="AQ... (key baru) atau AIza..." />
+        <button id="toggleKey" type="button" class="ghost">Tampilkan</button>
+      </div>
+
+      <label class="field-label" for="model">Model</label>
+      <input
+        id="model"
+        type="text"
+        list="modelOptions"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="gemini-3.5-flash"
+      />
+      <datalist id="modelOptions"></datalist>
+
+      <div class="row">
+        <button id="save" type="button" class="primary">Simpan</button>
+        <button id="test" type="button">Test Koneksi</button>
+      </div>
+
+      <p id="status" class="status"></p>
+
+      <hr />
+
+      <h2>Fitur</h2>
+      <label class="check">
+        <input id="featQuiz" type="checkbox" />
+        <span>Quiz / Pre-Test / Post-Test</span>
+      </label>
+      <label class="check">
+        <input id="featKuesioner" type="checkbox" />
+        <span>Kuesioner (Ya/Tidak)</span>
+      </label>
+      <label class="check">
+        <input id="featForum" type="checkbox" />
+        <span>Forum diskusi</span>
+      </label>
+
+      <p class="note">
+        Buka <strong>mentari.unpam.ac.id</strong> lalu masuk ke halaman <strong>exam</strong>,
+        <strong>kuesioner</strong>, atau <strong>topik forum</strong>. Panel AI muncul di kanan bawah.
+        Quiz dan kuesioner diisi otomatis; balasan forum tetap lewat tombol. Semua jawaban perlu
+        kamu review; extension tidak menekan tombol submit/selesai.
+      </p>
+      <p class="note">
+        Free tier Gemini punya batas harian. Extension otomatis beralih ke model gratis lain jika
+        model utama kena limit. Pilih <strong>Gemini 3.5 Flash</strong> untuk hasil tercepat.
+      </p>
+    </main>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mentari AI — Pengaturan Lanjutan</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Mentari AI — Pengaturan Lanjutan</h1>
+      <p class="sub">
+        Pengaturan ini berlaku untuk semua halaman Mentari. API key tetap diatur dari popup
+        extension.
+      </p>
+
+      <div class="grid">
+        <label class="field">
+          <span>Ambang confidence</span>
+          <input id="threshold" type="number" min="0" max="1" step="0.05" />
+          <small>0–1. Jawaban di bawah nilai ini ditandai untuk direview.</small>
+        </label>
+
+        <label class="field">
+          <span>Jumlah soal per permintaan AI</span>
+          <input id="batchSize" type="number" min="1" max="20" step="1" />
+          <small>1–20. Lebih kecil = lebih aman terhadap limit, lebih lambat.</small>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Konteks materi / RPS (opsional)</span>
+        <textarea id="context" rows="8" placeholder="Tempel ringkasan materi, RPS, atau catatan kuliah untuk meningkatkan akurasi jawaban."></textarea>
+        <small>Dikirim ke Gemini bersama soal. Jangan tempel data sensitif.</small>
+      </label>
+
+      <label class="check">
+        <input id="debug" type="checkbox" />
+        <span>Mode debug (log detail ke console halaman)</span>
+      </label>
+
+      <div class="row">
+        <button id="save" class="primary" type="button">Simpan Pengaturan</button>
+        <span id="status" class="status"></span>
+      </div>
+
+      <p class="note">
+        Extension ini tidak pernah menekan "Selesai Quiz", tidak mengakhiri ujian, dan tidak
+        mengirim jawaban/balasan tanpa persetujuanmu. Selalu review sebelum submit.
+      </p>
+    </main>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

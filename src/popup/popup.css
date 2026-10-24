@@ -1,0 +1,164 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 340px;
+  background: #0f172a;
+  color: #e2e8f0;
+  font: 13px/1.5 system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #24324a;
+  background: linear-gradient(135deg, #0f172a, #132033);
+}
+
+h1 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+.version {
+  font-size: 10px;
+  color: #7dd3fc;
+  background: #0b2a3a;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+main {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="password"],
+input[type="text"],
+select {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: #0b1220;
+  color: #e2e8f0;
+  border: 1px solid #2b3b56;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #14b8a6;
+}
+
+button {
+  background: #132033;
+  color: #e2e8f0;
+  border: 1px solid #2b3b56;
+  border-radius: 9px;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover:not(:disabled) {
+  border-color: #3b82f6;
+}
+
+button.primary {
+  background: #14b8a6;
+  border-color: #14b8a6;
+  color: #04231f;
+  font-weight: 700;
+}
+
+button.ghost {
+  background: transparent;
+}
+
+.status {
+  margin: 0;
+  min-height: 18px;
+  font-size: 12px;
+  color: #94a3b8;
+  white-space: pre-wrap;
+}
+
+.status.ok {
+  color: #34d399;
+}
+
+.status.warn {
+  color: #fbbf24;
+}
+
+.status.error {
+  color: #f87171;
+}
+
+.status.info {
+  color: #93c5fd;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #24324a;
+  margin: 6px 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.check em {
+  color: #64748b;
+  font-style: normal;
+  font-size: 10px;
+}
+
+.note {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #94a3b8;
+  background: #0b1220;
+  border: 1px dashed #24324a;
+  border-radius: 8px;
+  padding: 9px;
+}
